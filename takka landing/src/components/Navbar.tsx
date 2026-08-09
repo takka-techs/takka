@@ -67,7 +67,7 @@ export function Navbar() {
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
-          <Button onClick={() => window.open('https://tinyurl.com/takkatechs', '_blank')} variant="outline" className="ml-4 border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:bg-[var(--color-takka-gold)] hover:text-[var(--color-takka-navy)] transition-colors rounded-full px-6">
+          <Button onClick={() => window.open('https://drive.google.com/file/d/1L948Ncit48tH-A58hYvBddErVkzLkLAG/view?usp=drive_link', '_blank')} variant="outline" className="ml-4 border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:bg-[var(--color-takka-gold)] hover:text-[var(--color-takka-navy)] transition-colors rounded-full px-6">
             {t('nav.download')}
           </Button>
           <Button onClick={() => window.open('https://wa.me/201037230660', '_blank')} className="rtl:mr-2 ltr:ml-2 bg-[var(--color-takka-gold)] text-[var(--color-takka-navy)] hover:bg-foreground hover:text-background transition-colors rounded-full px-6 font-bold">
@@ -115,7 +115,7 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <Button onClick={() => window.open('https://tinyurl.com/takkatechs', '_blank')} variant="outline" className="w-full mt-2 border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:bg-[var(--color-takka-gold)] hover:text-[var(--color-takka-navy)] rounded-full">
+              <Button onClick={() => window.open('https://drive.google.com/file/d/1L948Ncit48tH-A58hYvBddErVkzLkLAG/view?usp=drive_link', '_blank')} variant="outline" className="w-full mt-2 border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:bg-[var(--color-takka-gold)] hover:text-[var(--color-takka-navy)] rounded-full">
                 {t('nav.download')}
               </Button>
               <Button onClick={() => window.open('https://wa.me/201037230660', '_blank')} className="w-full bg-[var(--color-takka-gold)] text-[var(--color-takka-navy)] hover:bg-foreground hover:text-background rounded-full font-bold">
