@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -19,10 +18,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: "takka landing"
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,13 +25,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: "takka landing/package-lock.json"
+          node-version: 24
+          cache: npm
+          cache-dependency-path: "takka landing/package-lock.json"
 
       - name: Install dependencies
+        working-directory: "takka landing"
         run: npm ci
 
       - name: Build
+        working-directory: "takka landing"
         run: npm run build
 
       - name: Setup Pages
@@ -45,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "takka landing/dist"
+          path: "./takka landing/dist"
 
   deploy:
     environment:
