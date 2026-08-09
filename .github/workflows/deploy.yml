@@ -20,21 +20,23 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 24
 
       - name: Install dependencies
+        working-directory: ./takka landing
         run: npm ci
 
       - name: Build
+        working-directory: ./takka landing
         run: npm run build
 
-      # مهم جداً للـ React Router على GitHub Pages
       - name: Fix SPA routing
+        working-directory: ./takka landing
         run: cp dist/index.html dist/404.html
 
       - name: Setup Pages
@@ -43,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./takka landing/dist
 
   deploy:
     environment:
