@@ -87,7 +87,7 @@ export function Hero() {
               
               <Magnetic strength={0.3}>
                 <button 
-                  onClick={() => window.open('https://tinyurl.com/takkatechs', '_blank')}
+                  onClick={() => window.open('#', '_blank')}
                   className="w-full sm:w-auto text-lg h-16 px-8 bg-transparent hover:bg-secondary/50 border border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:border-[var(--color-takka-gold)] transition-all duration-300 rounded-2xl flex items-center justify-center font-medium group"
                 >
                   {t('nav.download')}
@@ -115,40 +115,29 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="relative lg:h-[600px] flex items-center justify-center mt-12 lg:mt-0 perspective-[2000px]"
           >
-            {/* Main Laptop Mockup */}
+            {/* Main Phone Mockup */}
             <motion.div 
-              animate={{ y: [-10, 10, -10], rotateX: [10, 15, 10] }}
+              animate={{ y: [-10, 10, -10], rotateY: [-5, 5, -5] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-full max-w-lg aspect-[16/10] bg-card rounded-2xl border border-border shadow-2xl overflow-hidden transform-style-3d shadow-xl"
+              className="relative z-10 w-[280px] sm:w-[320px] aspect-[9/19.5] bg-card rounded-[40px] border-[8px] border-[#1e1e1e] shadow-2xl overflow-hidden transform-style-3d ring-[4px] ring-gray-900/50 mt-10 lg:mt-0"
             >
-              <div className="absolute inset-0 bg-secondary/10"></div>
-              {/* Fake Dashboard UI */}
-              <div className="flex h-full rtl:flex-row ltr:flex-row-reverse relative z-10">
-                <div className="w-1/4 border-l border-border bg-secondary/30 p-4">
-                  <div className="w-full h-8 bg-muted rounded-md mb-4"></div>
-                  <div className="w-full h-8 bg-[var(--color-takka-gold)]/50 rounded-md mb-2"></div>
-                  <div className="w-full h-8 bg-muted rounded-md mb-2"></div>
-                </div>
-                <div className="w-3/4 p-6 bg-card/50">
-                  <div className="flex justify-between mb-6">
-                    <div className="w-32 h-6 bg-muted rounded-md"></div>
-                    <div className="w-10 h-10 bg-[var(--color-takka-gold)]/50 rounded-full"></div>
-                  </div>
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="h-20 bg-muted rounded-xl border border-border"></div>
-                    <div className="h-20 bg-[var(--color-takka-gold)]/20 rounded-xl border border-[var(--color-takka-gold)]/30"></div>
-                    <div className="h-20 bg-muted rounded-xl border border-border"></div>
-                  </div>
-                  <div className="h-32 bg-secondary rounded-xl border border-border"></div>
-                </div>
-              </div>
+              {/* Notch */}
+              <div className="absolute top-0 inset-x-0 h-6 bg-[#1e1e1e] rounded-b-3xl w-40 mx-auto z-20"></div>
+
+              {/* Iframe Video */}
+              <iframe
+                 src="https://drive.google.com/file/d/1MbnM5RsxMqoRy3aThny4cBYocPR0fKF4/preview"
+                 className="w-full h-full object-cover border-0 z-10 relative pt-2"
+                 allow="autoplay"
+                 allowFullScreen
+              ></iframe>
             </motion.div>
 
             {/* Floating Elements */}
             <motion.div 
               animate={{ y: [0, -20, 0], rotateZ: [-5, 5, -5] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -right-6 md:-right-12 top-1/4 z-20 bg-card border border-[var(--color-takka-gold)]/30 shadow-[0_10px_30px_rgba(212,175,55,0.2)] rounded-xl py-3 px-5 backdrop-blur-md flex items-center gap-3"
+              className="absolute lg:-right-6 top-1/4 z-20 bg-card border border-[var(--color-takka-gold)]/30 shadow-[0_10px_30px_rgba(212,175,55,0.2)] rounded-xl py-3 px-5 backdrop-blur-md flex items-center gap-3 hidden sm:flex"
             >
               <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
                 <span className="text-green-500 text-xl">✓</span>
@@ -162,7 +151,7 @@ export function Hero() {
             <motion.div 
               animate={{ y: [0, 20, 0], rotateZ: [5, -5, 5] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute -left-6 md:-left-12 bottom-1/4 z-20 bg-card border border-blue-500/30 shadow-2xl rounded-xl py-3 px-5 backdrop-blur-md flex items-center gap-3"
+              className="absolute lg:-left-6 bottom-1/4 z-20 bg-card border border-blue-500/30 shadow-2xl rounded-xl py-3 px-5 backdrop-blur-md flex items-center gap-3 hidden sm:flex"
             >
                <div className="text-right">
                 <p className="text-sm font-bold text-foreground">{t('hero.mockup.maintenance')}</p>
