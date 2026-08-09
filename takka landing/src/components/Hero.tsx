@@ -87,7 +87,7 @@ export function Hero() {
               
               <Magnetic strength={0.3}>
                 <button 
-                  onClick={() => window.open('#', '_blank')}
+                  onClick={() => window.open('https://drive.google.com/file/d/1L948Ncit48tH-A58hYvBddErVkzLkLAG/view?usp=drive_link', '_blank')}
                   className="w-full sm:w-auto text-lg h-16 px-8 bg-transparent hover:bg-secondary/50 border border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:border-[var(--color-takka-gold)] transition-all duration-300 rounded-2xl flex items-center justify-center font-medium group"
                 >
                   {t('nav.download')}
