@@ -6,31 +6,20 @@
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Preloader } from "./components/Preloader";
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { TrustMarquee } from "./components/TrustMarquee";
-import { TargetAudience } from "./components/TargetAudience";
-import { VideoDemo } from "./components/VideoDemo";
-import { BentoGrid } from "./components/BentoGrid";
-import { InteractiveTour } from "./components/InteractiveTour";
-import { MaintenanceFlow } from "./components/MaintenanceFlow";
-import { Stats } from "./components/Stats";
-import { Integrations } from "./components/Integrations";
-import { PainPoints } from "./components/PainPoints";
-import { SecurityFeatures } from "./components/SecurityFeatures";
-import { Pricing } from "./components/Pricing";
-import { FAQ } from "./components/FAQ";
-import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
-
 import { ScrollToTop } from "./components/ScrollToTop";
 import { motion, useScroll } from "motion/react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { ChangePassword } from "./pages/ChangePassword";
+import { TrackMaintenance } from "./pages/TrackMaintenance";
 import "./i18n";
 
 export default function App() {
   const { scrollYProgress } = useScroll();
 
   return (
-    <>
+    <Router>
       <ThemeProvider defaultTheme="light" storageKey="takka-theme">
         <Preloader />
         <div className="min-h-screen bg-background text-foreground font-sans selection:bg-[var(--color-takka-gold)]/30 relative">
@@ -42,34 +31,17 @@ export default function App() {
             style={{ scaleX: scrollYProgress }}
           />
           <Navbar />
-          <main>
-            <Hero />
-            <TrustMarquee />
-            <TargetAudience />
-            <VideoDemo />
-            <div id="features">
-              <BentoGrid />
-            </div>
-            <div id="tour">
-              <InteractiveTour />
-              <MaintenanceFlow />
-            </div>
-            <Stats />
-            <Integrations />
-            <div id="why-us">
-              <PainPoints />
-              <SecurityFeatures />
-            </div>
-            <div id="pricing">
-              <Pricing />
-              <FAQ />
-            </div>
-            <FinalCTA />
-          </main>
+          
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/change-password" element={<ChangePassword />} />
+            <Route path="/track-maintenance" element={<TrackMaintenance />} />
+          </Routes>
+          
           <Footer />
           <ScrollToTop />
         </div>
       </ThemeProvider>
-    </>
+    </Router>
   );
 }
