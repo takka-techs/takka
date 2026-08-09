@@ -26,16 +26,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
-          cache-dependency-path: "takka landing/package-lock.json"
 
       - name: Install dependencies
-        working-directory: "takka landing"
         run: npm ci
 
       - name: Build
-        working-directory: "takka landing"
         run: npm run build
+
+      # مهم جداً للـ React Router على GitHub Pages
+      - name: Fix SPA routing
+        run: cp dist/index.html dist/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -43,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./takka landing/dist"
+          path: ./dist
 
   deploy:
     environment:
