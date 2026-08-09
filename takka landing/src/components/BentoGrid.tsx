@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ScanBarcode, Wrench, PackageSearch, ArrowLeftRight, Wallet, Store, LineChart, ShieldCheck } from "lucide-react";
+import { ScanBarcode, Wrench, PackageSearch, ArrowLeftRight, Wallet, Store, LineChart, ShieldCheck, CreditCard, Link, Smartphone } from "lucide-react";
 import { AnimatedText } from "./AnimatedText";
 import { useTranslation } from "react-i18next";
 
@@ -164,6 +164,51 @@ export function BentoGrid() {
             </div>
             <h3 className="text-xl font-bold text-card-foreground mb-2">{t('features.roles.title')}</h3>
             <p className="text-muted-foreground text-sm">{t('features.roles.desc')}</p>
+          </motion.div>
+
+          {/* 9. Shipping Machines */}
+          <motion.div 
+             initial={{ opacity: 0, y: 50 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true, margin: "-100px" }}
+             transition={{ delay: 0.8 }}
+             className="relative p-8 rounded-3xl bg-card border border-border group overflow-hidden hover:border-[var(--color-takka-gold)] transition-colors flex flex-col justify-center shadow-sm"
+          >
+            <div className="w-12 h-12 bg-teal-500/10 dark:bg-teal-500/20 rounded-xl flex items-center justify-center mb-6 text-teal-600 dark:text-teal-400">
+              <CreditCard size={24} />
+            </div>
+            <h3 className="text-xl font-bold text-card-foreground mb-2">{t('features.shipping.title')}</h3>
+            <p className="text-muted-foreground text-sm">{t('features.shipping.desc')}</p>
+          </motion.div>
+
+          {/* 10. Customer Tracking Links */}
+          <motion.div 
+             initial={{ opacity: 0, y: 50 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true, margin: "-100px" }}
+             transition={{ delay: 0.9 }}
+             className="relative p-8 rounded-3xl bg-card border border-border group overflow-hidden hover:border-[var(--color-takka-gold)] transition-colors flex flex-col justify-center shadow-sm"
+          >
+            <div className="w-12 h-12 bg-yellow-500/10 dark:bg-yellow-500/20 rounded-xl flex items-center justify-center mb-6 text-yellow-600 dark:text-yellow-500">
+              <Link size={24} />
+            </div>
+            <h3 className="text-xl font-bold text-card-foreground mb-2">{t('features.tracking.title')}</h3>
+            <p className="text-muted-foreground text-sm">{t('features.tracking.desc')}</p>
+          </motion.div>
+
+          {/* 11. Mobile App */}
+          <motion.div 
+             initial={{ opacity: 0, y: 50 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true, margin: "-100px" }}
+             transition={{ delay: 1.0 }}
+             className="relative p-8 rounded-3xl bg-card border border-border group overflow-hidden hover:border-[var(--color-takka-gold)] transition-colors flex flex-col justify-center shadow-sm"
+          >
+            <div className="w-12 h-12 bg-pink-500/10 dark:bg-pink-500/20 rounded-xl flex items-center justify-center mb-6 text-pink-600 dark:text-pink-400">
+              <Smartphone size={24} />
+            </div>
+            <h3 className="text-xl font-bold text-card-foreground mb-2">{t('features.mobile.title')}</h3>
+            <p className="text-muted-foreground text-sm">{t('features.mobile.desc')}</p>
           </motion.div>
 
         </div>
