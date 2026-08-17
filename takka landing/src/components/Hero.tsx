@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
-  
+  //
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
