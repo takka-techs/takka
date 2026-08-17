@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { Play } from "lucide-react";
+import { Play, Monitor, Smartphone } from "lucide-react";
 import { Magnetic } from "./Magnetic";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -84,13 +84,26 @@ export function Hero() {
                   {t('hero.btn.start')}
                 </button>
               </Magnetic>
-              
+
+              {/* Desktop / Laptop Download */}
               <Magnetic strength={0.3}>
                 <button 
                   onClick={() => window.open('https://drive.google.com/file/d/1L948Ncit48tH-A58hYvBddErVkzLkLAG/view?usp=drive_link', '_blank')}
-                  className="w-full sm:w-auto text-lg h-16 px-8 bg-transparent hover:bg-secondary/50 border border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:border-[var(--color-takka-gold)] transition-all duration-300 rounded-2xl flex items-center justify-center font-medium group"
+                  className="w-full sm:w-auto text-lg h-16 px-8 bg-transparent hover:bg-secondary/50 border border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:border-[var(--color-takka-gold)] transition-all duration-300 rounded-2xl flex items-center justify-center gap-3 font-medium group"
                 >
-                  {t('nav.download')}
+                  <Monitor className="w-5 h-5" />
+                  {t('nav.downloadDesktop')}
+                </button>
+              </Magnetic>
+
+              {/* Mobile Download */}
+              <Magnetic strength={0.3}>
+                <button 
+                  onClick={() => window.open('https://drive.google.com/file/d/17a-6i2as7r7Pcx8DMH7HNTBvD3VbEEe_/view?usp=drive_link', '_blank')}
+                  className="w-full sm:w-auto text-lg h-16 px-8 bg-transparent hover:bg-secondary/50 border border-[var(--color-takka-gold)] text-[var(--color-takka-gold)] hover:border-[var(--color-takka-gold)] transition-all duration-300 rounded-2xl flex items-center justify-center gap-3 font-medium group"
+                >
+                  <Smartphone className="w-5 h-5" />
+                  {t('nav.downloadMobile')}
                 </button>
               </Magnetic>
               
